@@ -2,6 +2,7 @@
   <div id="app">
     <mymenu></mymenu>
     <mycontent></mycontent>
+    
   </div>
 </template>
 
