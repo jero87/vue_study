@@ -36,13 +36,13 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      // 'jquery': 'jquery' 
+      '@': path.join(__dirname, './src')
     }
   },
   plugins: [
     new webpack.ProvidePlugin({
         $: "jquery",
-        jQuery: "jquery"
+        jQuery: "jquery",
     })
  ],
   devServer: {
