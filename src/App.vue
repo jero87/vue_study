@@ -3,7 +3,8 @@
     <myhead></myhead>
     <mymenu></mymenu>
     <mycontent></mycontent>
-    <todoitem v-bind:todo="groceryList" ></todoitem>
+    <todoitem v-bind:todo="groceryList" @changeMyMsg="changeMsg"></todoitem>
+    <div>{{Msg}}</div>
   </div>
 </template>
 
@@ -16,11 +17,16 @@ import mycontent from './components/contentEntry.vue'
 export default {
   name: 'app',
   components: {
-    myhead, mymenu, mycontent,todoitem
+    myhead, mymenu, mycontent, todoitem
   },
-  
+  methods: {
+    changeMsg(msg) {
+      this.Msg = msg;
+    }
+  },
   data() {
     return {
+      Msg:"初始msg",
       groceryList: [
         { id: 0, text: '蔬菜' },
         { id: 1, text: '奶酪' },
